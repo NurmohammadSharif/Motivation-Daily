@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily Motivation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,14 +10,31 @@
   <div class="container">
     <h1>Daily Motivation</h1>
     <p id="quote" class="quote">Loading motivation...</p>
+    <p id="author" class="author"></p>
+
     <div class="buttons">
       <button onclick="getQuote()">New Quote</button>
       <button onclick="shareQuote()">Share</button>
       <button onclick="toggleAddForm()">Add New Quote</button>
+      <button id="mode-toggle">Switch to Light Mode</button>
     </div>
+
+    <!-- Author Dropdown -->
+    <div class="author_box" style="margin-top: 20px;">
+      <select id="author-select">
+        <option value="">-- Choose Author --</option>
+      </select>
+      <button id="button_size" onclick="getQuoteByAuthor()">Get Quote by Author</button>
+    </div>
+
+    <!-- Add Quote Form -->
     <div id="add-quote-form" style="display:none; margin-top:20px;">
-      <input type="text" id="new-quote-text" placeholder="Write your quote here" />
-      <button id="submit_button" onclick="submitQuote()">Submit</button>
+    <textarea id="new-quote-text" placeholder="Write your quote here"></textarea>
+
+      <div class="class_author">
+        <input type="text" id="new-quote-author" placeholder="Author (optional)" />
+        <button id="submit_button" onclick="submitQuote()">Submit</button>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
